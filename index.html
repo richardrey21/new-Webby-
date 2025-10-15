@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheesy Web | Stuff</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111;
+      --fg: #fff;
+      --fg-muted: #aaa;
+      --accent: #fff;
+      --button-bg: #191919;
+      --button-fg: #fff;
+      --button-border: #333;
+      --button-hover-bg: #222;
+      --divider: #222;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 64px;
+      border-bottom: 1px solid var(--divider);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-link {
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 1rem;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .nav-link:hover {
+      opacity: 1;
+    }
+    .try-grok-btn {
+      background: var(--button-bg);
+      color: var(--button-fg);
+      border: 1px solid var(--button-border);
+      border-radius: 20px;
+      padding: 0.5rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, border 0.2s;
+      margin-left: 2rem;
+    }
+    .try-grok-btn:hover {
+      background: var(--button-hover-bg);
+      border-color: var(--fg);
+    }
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1rem 1rem 1rem;
+      position: relative;
+    }
+    .back-arrow {
+      color: var(--fg-muted);
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      align-self: flex-start;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .back-arrow:hover {
+      opacity: 1;
+    }
+    .date {
+      color: var(--fg-muted);
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      margin-bottom: 1.2rem;
+    }
+    .title {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+    }
+    .desc {
+      color: var(--fg-muted);
+      font-size: 1.15rem;
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .button-row {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .main-btn {
+      background: var(--button-bg);
+      color: var(--button-fg);
+      border: 1px solid var(--button-border);
+      border-radius: 20px;
+      padding: 0.7rem 1.7rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, border 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .main-btn:hover {
+      background: var(--button-hover-bg);
+      border-color: var(--fg);
+    }
+    .down-arrow {
+      font-size: 2rem;
+      color: var(--fg-muted);
+      margin-top: 1.5rem;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+    .grok-bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40vh;
+      pointer-events: none;
+      opacity: 0.07;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      z-index: 0;
+    }
+    .grok-bg-text {
+      font-size: 10vw;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--fg);
+      opacity: 0.15;
+      user-select: none;
+      margin-left: 2vw;
+    }
+    @media (max-width: 700px) {
+      .title { font-size: 2rem; }
+      .grok-bg-text { font-size: 18vw; }
+      .container { padding: 2rem 0.5rem 1rem 0.5rem; }
+      .navbar { padding: 0 1rem; }
+      .nav-menu { gap: 1rem; }
+      .try-grok-btn { margin-left: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">WEBBY</div>
+    <div class="nav-menu">
+      <a href="https://open.spotify.com/user/31ailjlyttnfp74fjqpljxpqx7ne?si=P60iHCo-RWq8sjNBjLvV5A" class="nav-link">Spotify</a>
+      <a href="https://pin.it/1EGKdeoA9" class="nav-link">Pinterest</a>
+      <a href="https://youtube.com/@cheesyguy-r9b2t?si=SAmxC2MwbR7xfgUd" class="nav-link">Youtube</a>
+      <a href="https://universitycoin.site/autobio" class="nav-link">AutoBio</a>
+      <a href="https://www.facebook.com/profile.php?id=61558516175580" class="nav-link">Facebook</a>
+      <a href="#" class="nav-link"></a>
+      <button href= "http://unitconverters.site" class="try-grok-btn">TRY POMMEGPT</button>
+    </div>
+  </nav>
+  <main class="container">
+    <div class="back-arrow">&larr;</div>
+    <div class="date">OCT 6, 2025</div>
+    <div class="title">Personal Web</div>
+    <div class="desc">
+      Hi this is my personal webby i made n stuff, i know lack luster but its faster to deploy then the older website i launched a year ago. uh PommeGPT is suppose to be a succesor to the older GPT but its still work in progress and the link doesnt work yet.....uh sorry i had to change the name. 
+    </div>
+    <div class="button-row">
+      <a href="http://unitconverters.site" class="main-btn">TRY POMMEGPT &rarr;</a>
+      <a href="#" class="main-btn">Works! &rarr;</a>
+    </div>
+    <div class="down-arrow">&#8595;</div>
+    <div class="grok-bg">
+      <div class="grok-bg-text">l'Pomme Gummie</div>
+    </div>
+  </main>
+</body>
+</html>
